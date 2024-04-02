@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +7,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --grad: linear-gradient(to bottom, hsl(0, 0%, 0%) 70%, hsl(0, 0%, 100%) 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,13 +19,29 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.logo {
+  max-width: auto;
+}
+/* sticky nav */
+
+.sticky--nav {
+  top: 0;
+  left: 0;
+  background-color: #ffff;
+  position: sticky;
+  box-shadow: 0px 2px 36px 0px hsla(0, 0%, 0%, 0.253);
+}
+
+@media screen and (max-width: 640px) {
+  .logo {
+    height: 4rem;
+    margin: 0.27rem;
+    width: 4rem;
+  }
 }
 
 @layer utilities {
